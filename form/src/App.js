@@ -141,7 +141,9 @@ function App() {
           placeholder="Website - Please enter a valid url"
           onChange={(e) => setSixth(e.target.value)}
         />
-        <button type="submit">submit</button>
+        <button id="mybtn" type="submit">
+          Submit
+        </button>
       </form>
     </div>
   );

@@ -45,8 +45,8 @@ function App() {
       setFourthError("");
     }
     e.preventDefault();
-    if (fifth === "") {
-      setFifthError("cannot be blank");
+    if (fifth !== fourth) {
+      setFifthError("-passwords must match");
     } else {
       setFifthError("");
     }

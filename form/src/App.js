@@ -27,10 +27,10 @@ function App() {
       setFirstError("");
     }
     e.preventDefault();
-    if (second === "") {
-      setSecondError("cannot be blank");
-    } else {
+    if (validator.isEmail(second)) {
       setSecondError("");
+    } else {
+      setSecondError("Please enter a valid email");
     }
     e.preventDefault();
     if (third === "") {
@@ -51,25 +51,26 @@ function App() {
       setFifthError("");
     }
     e.preventDefault();
-    if (sixth === "") {
-      setSixthError("cannot be blank");
-    } else {
+    if (validator.isURL(sixth)) {
       setSixthError("");
+    } else {
+      setSixthError("Please enter a valid URL");
     }
   }
   return (
-    <div className="theForm">
-      <form onSubmit={handleSubmit}>
+    <div>
+      <form className="theForm" onSubmit={handleSubmit}>
         <label
           htmlFor="name"
           className={firstError ? "text-label text-label-red" : "text-label"}
         >
-          Name {firstError}
+          <h4>Name {firstError}</h4>
         </label>
         <input
           id="name"
           type="text"
           name="name"
+          placeholder="Michael"
           onChange={(e) => setFirst(e.target.value)}
         />
 
@@ -77,12 +78,13 @@ function App() {
           htmlFor="email"
           className={secondError ? "text-label text-label-red" : "text-label"}
         >
-          Email {secondError}
+          <h4>Email {secondError}</h4>
         </label>
         <input
           id="email"
           type="email"
           name="email"
+          placeholder="email@test.com"
           onChange={(e) => setSecond(e.target.value)}
         />
 
@@ -90,12 +92,13 @@ function App() {
           htmlFor="username"
           className={thirdError ? "text-label text-label-red" : "text-label"}
         >
-          Username {thirdError}
+          <h4>Username {thirdError}</h4>
         </label>
         <input
           id="username"
           type="text"
           name="username"
+          placeholder="myusername"
           onChange={(e) => setThird(e.target.value)}
         />
 
@@ -103,7 +106,7 @@ function App() {
           htmlFor="password"
           className={fourthError ? "text-label text-label-red" : "text-label"}
         >
-          Password {fourthError}
+          <h4>Password {fourthError}</h4>
         </label>
         <input
           id="password"
@@ -116,7 +119,7 @@ function App() {
           htmlFor="confirmpassword"
           className={fifthError ? "text-label text-label-red" : "text-label"}
         >
-          Confirm password {fifthError}
+          <h4>Confirm password {fifthError}</h4>
         </label>
         <input
           id="confirm-password"
@@ -129,12 +132,13 @@ function App() {
           htmlFor="website"
           className={sixthError ? "text-label text-label-red" : "text-label"}
         >
-          Website {sixthError}
+          <h4>Website {sixthError}</h4>
         </label>
         <input
           id="name"
           type="text"
           name="name"
+          placeholder="Website - Please enter a valid url"
           onChange={(e) => setSixth(e.target.value)}
         />
         <button type="submit">submit</button>

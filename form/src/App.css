@@ -4,19 +4,33 @@
   box-sizing: border-box;
 }
 
-#textbox {
-  border: red;
-  color: red;
-}
-
 .theForm {
-  border: 2px solid green;
+  background-color: grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 800px;
   width: 40%;
   margin-left: 440px;
   margin-top: 50px;
+  font-size: 30px;
+  color: white;
 }
 
-.firstError {
-  border: 2px solid red;
+input {
+  background-color: grey;
+  border: 2px solid white;
+  margin-left: 20px;
+  height: 50px;
+  width: 90%;
+}
+
+input::placeholder {
+  color: white;
+  font-size: 15px;
+  font-style: italic;
+}
+
+h4 {
+  margin-left: 20px;
 }
